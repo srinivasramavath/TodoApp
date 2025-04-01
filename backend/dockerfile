@@ -1,0 +1,27 @@
+# Use official .NET Core runtime as base image
+FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
+WORKDIR /app
+EXPOSE 5000
+
+# Use .NET SDK image to build the app
+FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+WORKDIR /src
+
+# Copy the project file and restore dependencies
+COPY ["backend.csproj", "./"]
+RUN dotnet restore "backend.csproj"
+
+# Copy the entire project and build it
+COPY . .
+RUN dotnet publish "backend.csproj" -c Release -o /app/publish
+
+# Use the base image to run the app
+FROM base AS final
+WORKDIR /app
+COPY --from=build /app/publish .
+
+# Set environment variables
+ENV ASPNETCORE_URLS=http://+:5000
+
+# Start the application
+ENTRYPOINT ["dotnet", "backend.dll"]
