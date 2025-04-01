@@ -1,0 +1,107 @@
+/* Register.css */
+
+/* General container styling */
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #4a90e2, #145da0);
+    padding: 1rem;
+  }
+  
+  /* Form card styling */
+  .register-card {
+    max-width: 400px;
+    width: 50%;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 1.5rem;
+    border-radius: 6px;
+    background: linear-gradient(to right, #4a90e2, #145da0);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(12px);
+  }
+  
+  /* Heading style */
+  .register-card h1 {
+    text-align: center;
+    margin-bottom: 0.6rem;
+    color: #222;
+  }
+  
+  /* Error message style */
+  .error-message {
+    color: #d32f2f;
+    background-color: #fde8e8;
+    padding: 0.5rem;
+    border-radius: 2px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Form input fields */
+  .register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  
+  .register-form label {
+    display: block;
+    margin-bottom: 0.2rem;
+    font-weight: 600;
+  }
+  
+  .register-form input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: lightblue;
+  }
+  
+  .register-form input.error {
+    border-color: #d32f2f;
+  }
+  
+  .register-form span {
+    color: #d32f2f;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+    display: block;
+  }
+  
+  /* Submit button styling */
+  .register-button {
+    padding: 0.8rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 0.7rem;
+    transition: background-color 0.3s;
+  }
+  
+  .register-button[disabled] {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  /* Login redirect link */
+  .login-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #444;
+  }
+  
+  .login-link span {
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: 600;
+  }
+  
