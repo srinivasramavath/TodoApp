@@ -1,10 +1,10 @@
-# Use official .NET Core runtime as base image
-FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
+# Use the correct .NET 9.0 base image
+FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
 WORKDIR /app
 EXPOSE 5000
 
-# Use .NET SDK image to build the app
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+# Use .NET SDK 9.0 image to build the app
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /src
 
 # Copy the project file and restore dependencies
